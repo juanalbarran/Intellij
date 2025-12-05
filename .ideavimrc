@@ -1,0 +1,76 @@
+" --- Global ---
+let mapleader = " "
+
+set which-key
+set timeout
+set timeoutlen=500
+
+set surround
+set number relativenumber
+set commentary
+set highlightedyank
+
+let g:which_key_map = {}
+let g:which_key_map['f'] = { 'name': '+Files'}
+let g:which_key_map['g'] = { 'name': '+LSP'}
+let g:which_key_map['t'] = { 'name': '+Tools/Terminal'}
+let g:which_key_map['r'] = { 'name': '+Refactor'}
+
+" --- Splits ---
+nmap <leader>vs <Action>(SplitVertically)
+nmap <leader>hs <Action>(SplitHorizontally)
+
+" --- Mobility arts ---
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
+
+" --- Buffer stuff ---
+nmap <leader>bd <Action>(CloseContent)
+
+" --- Files ---
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fb <Action>(RecentFiles)
+nmap <leader>fa <Action>(SearchEverywhere)
+nmap <leader>fs <Action>(FileStructurePopup)
+nmap <leader>fg <Action>(FindInPath)
+
+" --- Lsp Stuff ---
+nmap gi <Action>(GotoImplementation)
+nmap gr <Action>(ShowUsages)
+nmap gd <Action>(GotoDeclaration)
+nmap gb <Action>(Back)
+
+" --- Code actions ---
+nmap <leader>ca <Action>(ShowIntentionActions)
+
+" --- Refactoring ---
+nmap <leader>rm <Action>(RenameElement)
+vmap <leader>rv <Action>(IntroduceVariable)
+vmap <leader>rm <Action>(ExtractMethod)
+
+" --- Autocomplete stuff ---
+imap <C-y> <Action>(EditorChooseLookupItem)
+imap <C-x><C-o> <Action>(CodeCompletion)
+
+" --- Intellij ---
+nmap <leader>e <Action>(ActivateProjectToolWindow)
+
+" --- Tool Windows ---
+nmap <leader>tt <Action>(ActivateTerminalToolWindow)
+nmap <leader>tp <Action>(ActivateProblemsViewToolWindow)
+nmap <leader>tg <Action>(ActivateVersionControlToolWindow)
+nmap <leader>ts <Action>(ActivateServicesToolWindow)
+nmap <leader>tc <Action>(ActivateCommitToolWindow)
+nmap <leader>to <Action>(ActivateStructureToolWindow)
+nmap <leader>tm <Action>(ActivateMavenProjectsToolWindow)
+
+" --- Folding ---
+" For folding vim already have the shortcuts
+" za Alternate  | to togle folding
+" zM More       | to unfold everything
+" zR Reduce     | to fold everything
