@@ -9,6 +9,7 @@ set surround
 set number relativenumber
 set commentary
 set highlightedyank
+set clipboard+=unnamedplus
 
 let g:which_key_map = {}
 let g:which_key_map['f'] = { 'name': '+Files'}
@@ -44,12 +45,14 @@ nmap gi <Action>(GotoImplementation)
 nmap gr <Action>(ShowUsages)
 nmap gd <Action>(GotoDeclaration)
 nmap gb <Action>(Back)
+nmap K  <Action>(QuickJavaDoc)
+nmap <C-k> <Action>(ParameterInfo)
 
 " --- Code actions ---
 nmap <leader>ca <Action>(ShowIntentionActions)
 
 " --- Refactoring ---
-nmap <leader>rm <Action>(RenameElement)
+nmap <leader>rn <Action>(RenameElement)
 vmap <leader>rv <Action>(IntroduceVariable)
 vmap <leader>rm <Action>(ExtractMethod)
 
@@ -74,3 +77,4 @@ nmap <leader>tm <Action>(ActivateMavenProjectsToolWindow)
 " za Alternate  | to togle folding
 " zM More       | to unfold everything
 " zR Reduce     | to fold everything
+
